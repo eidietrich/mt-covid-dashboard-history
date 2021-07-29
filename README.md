@@ -1,3 +1,3 @@
-# Inciweb history
+# CDC mask map history
 
-Git scraper for [Inciweb](https://inciweb.nwcg.gov/) incident data
+Git scraper for [CDC COVID-19 community transmission map](https://covid.cdc.gov/covid-data-tracker/#county-view) map data
