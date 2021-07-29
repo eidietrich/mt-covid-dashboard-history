@@ -1,0 +1,19 @@
+{
+  "name": "cdc-mask-map-history",
+  "version": "1.0.0",
+  "description": "Git scraper for [CDC COVID-19 community transmission map](https://covid.cdc.gov/covid-data-tracker/#county-view) map data",
+  "main": "index.js",
+  "scripts": {
+    "process": "node process.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eidietrich/cdc-mask-map-history.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eidietrich/cdc-mask-map-history/issues"
+  },
+  "homepage": "https://github.com/eidietrich/cdc-mask-map-history#readme"
+}
