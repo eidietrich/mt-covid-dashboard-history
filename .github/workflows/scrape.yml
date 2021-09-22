@@ -1,4 +1,4 @@
-name: Scrape CDC transmission map data
+name: Scrape Montana COVID-19 dashboard
 
 on:
   push:
@@ -12,9 +12,15 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
-      - name: Fetch latest data
+      - name: Fetch latest MT case trend data
         run: |-
-          wget "https://data.cdc.gov/resource/9mfq-cb36.json?state=MT" -O montana.json
+          wget https://services.arcgis.com/qnjIrwR8z5Izc0ij/arcgis/rest/services/PROD_CoronavirusDailyCaseSummaryTable_VIEW/FeatureServer/0/query\?f\=json\&where\=1%3D1\&returnGeometry\=false\&spatialRel\=esriSpatialRelIntersects\&outFields\=\*\&orderByFields\=Date_Reported_to_CDEpi%20asc\&resultOffset\=0\&resultRecordCount\=32000\&resultType\=standard\&cacheHint\=true -O mt-case-history.json
+      - name: Fetch latest MT county snapshot data
+        run: |-
+          wget "https://services.arcgis.com/qnjIrwR8z5Izc0ij/ArcGIS/rest/services/COVID_Cases_Production_View/FeatureServer/0/query?f=json&where=Total%20%3C%3E%200&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outSR=102100&resultOffset=0&resultRecordCount=56&cacheHint=true" -O mt-county-case-snapshot.json
+      - name: Fetch latest MT county vaccination data
+        run: |-
+          wget "https://services.arcgis.com/qnjIrwR8z5Izc0ij/arcgis/rest/services/COVID_Vaccination_PRD_View/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=NAMELABEL%20asc&outSR=102100&resultOffset=0&resultRecordCount=57&resultType=standard&cacheHint=true" -O mt-county-vaccination-snapshot.json
       # - name: Use Node.js ${{ matrix.node-version }}
       #   uses: actions/setup-node@v2
       #   with:
