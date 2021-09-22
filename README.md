@@ -1,3 +1,3 @@
-# CDC covid trends
+# Montana COVID Dashboard history
 
-Git scraper for [CDC COVID-19 cases and deaths data](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36).
+Git scraper for data on [Montana COVID-19 dashboard](https://www.arcgis.com/apps/MapSeries/index.html?appid=7c34f3412536439491adcc2103421d4b).
