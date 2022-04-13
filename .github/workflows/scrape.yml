@@ -21,12 +21,12 @@ jobs:
       - name: Fetch latest MT county vaccination data
         run: |-
           wget "https://services.arcgis.com/qnjIrwR8z5Izc0ij/arcgis/rest/services/COVID_Vaccination_PRD_View/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=NAMELABEL%20asc&outSR=102100&resultOffset=0&resultRecordCount=57&resultType=standard&cacheHint=true" -O mt-county-vaccination-snapshot.json
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: "14.x"
-      # - run: npm ci
-      # - run: npm run process
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - run: npm ci
+      - run: npm run process
       - name: Commit and push if changed
         run: |-
           git config user.name "Automated"
