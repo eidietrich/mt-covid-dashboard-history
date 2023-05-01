@@ -3,7 +3,7 @@ name: Scrape Montana COVID-19 dashboard
 on:
   push:
   workflow_dispatch:
-  schedule:
+  # schedule:
     # - cron: "4,24,44 * * * *"
 
 jobs:
